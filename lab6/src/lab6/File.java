@@ -5,41 +5,32 @@ public class File extends FileSystem{
 	
 	private 
 		int size;
-		String filename;
+		
 	public
-		File(String filename,int size) {
-		this.filename = filename;
+	
+	File(String name,int size) {
+		this.name = name;
 		this.size = size;
 	}
 	
-		File(){
-			this.filename = "unnamedFile";
-			this.size = 1;
-		}
-		
-		
-		String getFilename() {
-			return filename;
-		}
-		
-		int getSize() {
-			return size;
-		}
-		
+	String getName() {
+		return this.name;
+	}
 	
-		
-		
-		 @Override
-		    public String toString() {
-		        return "ָלÿ פאיכא = " + this.filename + " נאחלונ פאיכא = " + this.size;
-		    }
-
+	int getSize() {
+		return this.size;
+	}
 	
+	void setSize(int size) {
+		this.size = size;
+	}
 		
+	@Override
+	
+	
+	public String toString() {
+		return "װאיכ " + this.name + " ׀אחלונ = " + this.size;
 		
-		
-		
-		
-		
+	}
 		
 }
