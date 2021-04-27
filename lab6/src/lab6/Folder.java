@@ -2,7 +2,7 @@ package lab6;
 
 import java.util.*;
 
-public class Folder extends FileSystem {
+public class Folder extends FileSystem implements Cloneable{
 	
 	private 
 		
@@ -14,16 +14,18 @@ public class Folder extends FileSystem {
 		this.fs = new ArrayList<FileSystem>();
 		
 	}
+	Folder() {
+		this.name = "unnamedFolder";
+		this.fs = new ArrayList<FileSystem>();
 		
+	}	
 	ArrayList<FileSystem> getFileSystem(){
 		return this.fs;
 	}
 	
 	
 	
-	public String toString() {
-		return "Папка " + this.name;
-	}
+	
 	
 	
 	
@@ -100,4 +102,32 @@ public class Folder extends FileSystem {
 			}
 		}
 	}
+	
+	
+	
+	public String toString() {
+		return "Папка " + this.name;
+	}
+	
+	
+	
+	public boolean equals(Folder folder) {
+		if(this.fs.equals(folder.fs)&& this.name == folder.name) {
+			return true;
+		}
+		return false;
+	}
+	
+	
+	
+	public Folder clone() throws CloneNotSupportedException {
+		
+		
+		return (Folder) super.clone();
+		
+	}
+	
+	
+	
+	
 }
